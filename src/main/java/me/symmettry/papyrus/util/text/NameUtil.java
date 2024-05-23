@@ -1,4 +1,4 @@
-package me.symmettry.papyrus.util;
+package me.symmettry.papyrus.util.text;
 
 import lombok.experimental.UtilityClass;
 

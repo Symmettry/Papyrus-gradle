@@ -4,7 +4,7 @@ import lombok.SneakyThrows;
 import me.symmettry.papyrus.Papyrus;
 import me.symmettry.papyrus.script.ScriptManager;
 import me.symmettry.papyrus.script.ScriptObj;
-import me.symmettry.papyrus.util.ColorUtil;
+import me.symmettry.papyrus.util.text.ColorUtil;
 import me.symmettry.papyrus.util.commands.AbstractCommand;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;

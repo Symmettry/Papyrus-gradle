@@ -1,7 +1,7 @@
 package me.symmettry.papyrus.script.members;
 
 import me.symmettry.papyrus.script.data.PapyrusItem;
-import me.symmettry.papyrus.util.NameUtil;
+import me.symmettry.papyrus.util.text.NameUtil;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.graalvm.polyglot.HostAccess.Export;

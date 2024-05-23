@@ -1,9 +1,7 @@
 package me.symmettry.papyrus.script.data;
 
 import lombok.Getter;
-import me.symmettry.papyrus.util.ColorUtil;
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.TextComponent;
+import me.symmettry.papyrus.util.text.ColorUtil;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.inventory.EquipmentSlotGroup;
