@@ -1,6 +1,5 @@
 package me.symmettry.papyrus.util.commands;
 
-import lombok.SneakyThrows;
 import lombok.experimental.UtilityClass;
 import me.symmettry.papyrus.Papyrus;
 import org.bukkit.Server;

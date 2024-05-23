@@ -3,7 +3,6 @@ package me.symmettry.papyrus.script;
 import lombok.SneakyThrows;
 import me.symmettry.papyrus.Papyrus;
 
-import java.io.File;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
 import java.nio.file.Path;
