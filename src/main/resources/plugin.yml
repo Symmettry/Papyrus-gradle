@@ -1,0 +1,4 @@
+name: Papyrus
+version: '${version}'
+main: me.symmettry.papyrus.Papyrus
+api-version: '1.20'

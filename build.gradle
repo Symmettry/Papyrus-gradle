@@ -1,0 +1,77 @@
+plugins {
+    id 'java'
+    id 'xyz.jpenilla.run-paper' version '2.3.0'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group = 'me.symmettry'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://repo.papermc.io/repository/maven-public/'
+    }
+    maven {
+        url 'https://oss.sonatype.org/content/groups/public/'
+    }
+}
+
+dependencies {
+    implementation 'org.graalvm.polyglot:polyglot:24.0.1'
+    implementation 'org.graalvm.js:js:23.0.4'
+    implementation 'org.graalvm.js:js-scriptengine:24.0.1'
+    implementation 'org.graalvm.truffle:truffle-api:24.0.1'
+    implementation 'org.json:json:20240303'
+
+    implementation 'org.projectlombok:lombok:1.18.32'
+    annotationProcessor 'org.projectlombok:lombok:1.18.32'
+
+    compileOnly 'io.papermc.paper:paper-api:1.20.6-R0.1-SNAPSHOT'
+    implementation 'org.apache.maven.plugins:maven-compiler-plugin:3.13.0'
+}
+
+tasks {
+    runServer {
+        minecraftVersion '1.20.6'
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release.set(21)
+}
+
+tasks.register('runWithExperimentalVMOptions', Exec) {
+    executable = "${System.getProperty('java.home')}/bin/java"
+    args = [
+            '--module-path', '',
+            '-XX:+UnlockExperimentalVMOptions',
+            '-XX:+EnableJVMCI',
+            '--upgrade-module-path', "$buildDir/compiler/",
+            '-m', 'embedding/org.example.embedding.Main'
+    ]
+}
+
+tasks.register('runWithoutRuntimeCompilation', Exec) {
+    executable = "${System.getProperty('java.home')}/bin/java"
+    args = [
+            '--module-path', '',
+            '-m', 'embedding/org.example.embedding.Main'
+    ]
+}
+
+processResources {
+    def props = [version: version]
+    inputs.properties props
+    filteringCharset 'UTF-8'
+    filesMatching('plugin.yml') {
+        expand props
+    }
+}
+
+sourceSets {
+    main {
+        output.resourcesDir = "$buildDir/processed-resources/main"
+    }
+}

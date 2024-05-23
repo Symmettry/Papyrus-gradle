@@ -1,0 +1,278 @@
+[03:13:28] [Paper Plugin Remapper Thread - 1/INFO]: [PluginRemapper] Remapping plugin 'D:\Code\Papyrus-gradle\build\libs\Papyrus-1.0-SNAPSHOT-all.jar'...
+[03:13:37] [Paper Plugin Remapper Thread - 1/INFO]: [PluginRemapper] Done remapping plugin 'D:\Code\Papyrus-gradle\build\libs\Papyrus-1.0-SNAPSHOT-all.jar' in 8846ms.
+[03:13:42] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[03:13:44] [ServerMain/INFO]: Loaded 1175 recipes
+[03:13:44] [ServerMain/INFO]: Loaded 1276 advancements
+[03:13:44] [Server thread/INFO]: Starting minecraft server version 1.20.6
+[03:13:44] [Server thread/INFO]: Loading properties
+[03:13:44] [Server thread/INFO]: This server is running Paper version 1.20.6-90-master@b149584 (2024-05-22T17:30:13Z) (Implementing API version 1.20.6-R0.1-SNAPSHOT)
+[03:13:45] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[03:13:45] [Server thread/INFO]: Using 4 threads for Netty based IO
+[03:13:46] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+    We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
+    For more information please visit: https://github.com/PaperMC/Paper/issues/8948
+[03:13:46] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 1 worker threads, and gen parallelism of 1 threads
+[03:13:47] [Server thread/INFO]: Default game type: SURVIVAL
+[03:13:47] [Server thread/INFO]: Generating keypair
+[03:13:47] [Server thread/INFO]: Starting Minecraft server on *:25565
+[03:13:47] [Server thread/INFO]: Using default channel type
+[03:13:47] [Server thread/INFO]: Paper: Using Java compression from Velocity.
+[03:13:47] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[03:13:47] [Server thread/INFO]: [Papyrus] Loading server plugin Papyrus v1.0-SNAPSHOT
+[03:13:47] [Server thread/INFO]: [LuckPerms] Loading server plugin LuckPerms v5.4.128
+[03:13:47] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[03:13:47] [Server thread/INFO]: [LuckPerms] Enabling LuckPerms v5.4.128
+[03:13:48] [Server thread/INFO]:         __    
+[03:13:48] [Server thread/INFO]:   |    |__)   LuckPerms v5.4.128
+[03:13:48] [Server thread/INFO]:   |___ |      Running on Bukkit - Paper
+[03:13:48] [Server thread/INFO]: 
+[03:13:48] [Server thread/INFO]: [LuckPerms] Loading configuration...
+[03:13:48] [Server thread/INFO]: [LuckPerms] Loading storage provider... [H2]
+[03:13:48] [Server thread/INFO]: [LuckPerms] Loading internal permission managers...
+[03:13:48] [Server thread/INFO]: [LuckPerms] Performing initial data load...
+[03:13:48] [Server thread/INFO]: [LuckPerms] Successfully enabled. (took 1119ms)
+[03:13:48] [Server thread/INFO]: Preparing level "world"
+[03:13:49] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[03:13:52] [Server thread/INFO]: Time elapsed: 2715 ms
+[03:13:52] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[03:13:52] [Server thread/INFO]: Time elapsed: 287 ms
+[03:13:52] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[03:13:52] [Server thread/INFO]: Time elapsed: 228 ms
+[03:13:52] [Server thread/INFO]: [Papyrus] Enabling Papyrus v1.0-SNAPSHOT
+[03:13:52] [Server thread/INFO]: [Papyrus] Loading engine & scripts...
+[03:13:59] [Server thread/INFO]: [Papyrus] Loaded engine & scripts.
+[03:13:59] [Server thread/INFO]: Running delayed init tasks
+[03:13:59] [Server thread/INFO]: Done (15.129s)! For help, type "help"
+[03:13:59] [Server thread/INFO]: Timings Reset
+[03:14:00] [User Authenticator #0/INFO]: UUID of player Symmettry is 5382597a-b47c-4c01-b305-d9b9e5af14c8
+[03:14:00] [Server thread/INFO]: Symmettry joined the game
+[03:14:01] [Server thread/INFO]: Symmettry[/127.0.0.1:62084] logged in with entity id 54 at ([world]95.98451043864351, 68.0, -76.19605785646105)
+[03:14:15] [Server thread/INFO]: Symmettry issued server command: /papyrus:[Ljava.lang.String;@65fa13be
+[03:14:23] [Server thread/INFO]: Symmettry issued server command: /papyrus:[Ljava.lang.String;@65fa13be
+[03:14:30] [Server thread/INFO]: Symmettry issued server command: /pap reload test
+[03:14:30] [Server thread/INFO]: 335
+[03:14:34] [Server thread/INFO]: Symmettry issued server command: /papyrus:[Ljava.lang.String;@65fa13be
+[03:14:34] [Server thread/ERROR]: Command exception: /papyrus:[Ljava.lang.String;@65fa13be
+java.lang.IllegalStateException: The Context is already closed.
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.PolyglotEngineException.closedException(PolyglotEngineException.java:137) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.PolyglotContextImpl.checkClosedOrDisposing(PolyglotContextImpl.java:1453) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.PolyglotContextImpl.enterThreadChanged(PolyglotContextImpl.java:860) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.PolyglotEngineImpl.enterCached(PolyglotEngineImpl.java:2095) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.HostToGuestRootNode.execute(HostToGuestRootNode.java:109) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.api.impl.DefaultCallTarget.callDirectOrIndirect(DefaultCallTarget.java:85) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.api.impl.DefaultCallTarget.call(DefaultCallTarget.java:102) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.PolyglotFunctionProxyHandler.invoke(PolyglotFunctionProxyHandler.java:151) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/jdk.proxy4/jdk.proxy4.$Proxy86.accept(Unknown Source) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/me.symmettry.papyrus.commands.ScriptedCommand.execute(ScriptedCommand.java:31) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at io.papermc.paper.command.brigadier.bukkit.BukkitCommandNode$BukkitBrigCommand.run(BukkitCommandNode.java:86) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at com.mojang.brigadier.context.ContextChain.runExecutable(ContextChain.java:73) ~[brigadier-1.2.9.jar:?]
+	at net.minecraft.commands.execution.tasks.ExecuteCommand.execute(ExecuteCommand.java:31) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.execution.tasks.ExecuteCommand.execute(ExecuteCommand.java:19) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.execution.UnboundEntryAction.lambda$bind$0(UnboundEntryAction.java:8) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.execution.CommandQueueEntry.execute(CommandQueueEntry.java:5) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.execution.ExecutionContext.runCommandQueue(ExecutionContext.java:103) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.Commands.executeCommandInContext(Commands.java:442) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.Commands.performCommand(Commands.java:349) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.Commands.performCommand(Commands.java:336) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.Commands.performCommand(Commands.java:331) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.performUnsignedChatCommand(ServerGamePacketListenerImpl.java:2202) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.lambda$handleChatCommand$14(ServerGamePacketListenerImpl.java:2176) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:151) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1511) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:195) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:125) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1488) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1411) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.util.thread.BlockableEventLoop.runAllTasks(BlockableEventLoop.java:114) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:1603) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1231) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:323) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
+	Suppressed: com.oracle.truffle.api.TruffleStackTrace$LazyStackTrace
+[03:14:38] [Server thread/INFO]: Symmettry issued server command: /papyrus:test
+[03:14:42] [Server thread/INFO]: Symmettry issued server command: /pap reload test
+[03:14:42] [Server thread/INFO]: 340
+[03:14:42] [Server thread/INFO]: Symmettry issued server command: /pap reload test
+[03:14:42] [Server thread/INFO]: 345
+[03:14:43] [Server thread/INFO]: Symmettry issued server command: /pap reload test
+[03:14:43] [Server thread/INFO]: 350
+[03:14:43] [Server thread/INFO]: Symmettry issued server command: /pap reload test
+[03:14:43] [Server thread/INFO]: 355
+[03:14:43] [Server thread/INFO]: Symmettry issued server command: /pap reload test
+[03:14:43] [Server thread/INFO]: 360
+[03:14:44] [Server thread/INFO]: Symmettry issued server command: /pap reload test
+[03:14:44] [Server thread/INFO]: 365
+[03:14:44] [Server thread/INFO]: Symmettry issued server command: /pap reload test
+[03:14:44] [Server thread/INFO]: 370
+[03:14:46] [Server thread/INFO]: Symmettry issued server command: /papyrus:[Ljava.lang.String;@65fa13be
+[03:14:46] [Server thread/ERROR]: Command exception: /papyrus:[Ljava.lang.String;@65fa13be
+java.lang.IllegalStateException: The Context is already closed.
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.PolyglotEngineException.closedException(PolyglotEngineException.java:137) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.PolyglotContextImpl.checkClosedOrDisposing(PolyglotContextImpl.java:1453) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.PolyglotContextImpl.enterThreadChanged(PolyglotContextImpl.java:860) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.PolyglotEngineImpl.enterCached(PolyglotEngineImpl.java:2095) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.HostToGuestRootNode.execute(HostToGuestRootNode.java:109) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.api.impl.DefaultCallTarget.callDirectOrIndirect(DefaultCallTarget.java:85) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.api.impl.DefaultCallTarget.call(DefaultCallTarget.java:102) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.PolyglotFunctionProxyHandler.invoke(PolyglotFunctionProxyHandler.java:151) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/jdk.proxy4/jdk.proxy4.$Proxy86.accept(Unknown Source) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/me.symmettry.papyrus.commands.ScriptedCommand.execute(ScriptedCommand.java:31) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at io.papermc.paper.command.brigadier.bukkit.BukkitCommandNode$BukkitBrigCommand.run(BukkitCommandNode.java:86) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at com.mojang.brigadier.context.ContextChain.runExecutable(ContextChain.java:73) ~[brigadier-1.2.9.jar:?]
+	at net.minecraft.commands.execution.tasks.ExecuteCommand.execute(ExecuteCommand.java:31) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.execution.tasks.ExecuteCommand.execute(ExecuteCommand.java:19) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.execution.UnboundEntryAction.lambda$bind$0(UnboundEntryAction.java:8) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.execution.CommandQueueEntry.execute(CommandQueueEntry.java:5) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.execution.ExecutionContext.runCommandQueue(ExecutionContext.java:103) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.Commands.executeCommandInContext(Commands.java:442) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.Commands.performCommand(Commands.java:349) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.Commands.performCommand(Commands.java:336) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.Commands.performCommand(Commands.java:331) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.performUnsignedChatCommand(ServerGamePacketListenerImpl.java:2202) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.lambda$handleChatCommand$14(ServerGamePacketListenerImpl.java:2176) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:151) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1511) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:195) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:125) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1488) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1411) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:135) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1377) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1238) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:323) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
+	Suppressed: com.oracle.truffle.api.TruffleStackTrace$LazyStackTrace
+[03:14:50] [Server thread/INFO]: Symmettry issued server command: /papyrus:test
+[03:22:18] [Server thread/INFO]: Symmettry issued server command: /[Ljava.lang.String;@65fa13be
+[03:22:18] [Server thread/ERROR]: Command exception: /[Ljava.lang.String;@65fa13be
+java.lang.IllegalStateException: The Context is already closed.
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.PolyglotEngineException.closedException(PolyglotEngineException.java:137) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.PolyglotContextImpl.checkClosedOrDisposing(PolyglotContextImpl.java:1453) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.PolyglotContextImpl.enterThreadChanged(PolyglotContextImpl.java:860) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.PolyglotEngineImpl.enterCached(PolyglotEngineImpl.java:2095) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.HostToGuestRootNode.execute(HostToGuestRootNode.java:109) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.api.impl.DefaultCallTarget.callDirectOrIndirect(DefaultCallTarget.java:85) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.api.impl.DefaultCallTarget.call(DefaultCallTarget.java:102) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.PolyglotFunctionProxyHandler.invoke(PolyglotFunctionProxyHandler.java:151) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/jdk.proxy4/jdk.proxy4.$Proxy86.accept(Unknown Source) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/me.symmettry.papyrus.commands.ScriptedCommand.execute(ScriptedCommand.java:31) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at io.papermc.paper.command.brigadier.bukkit.BukkitCommandNode$BukkitBrigCommand.run(BukkitCommandNode.java:86) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at com.mojang.brigadier.context.ContextChain.runExecutable(ContextChain.java:73) ~[brigadier-1.2.9.jar:?]
+	at net.minecraft.commands.execution.tasks.ExecuteCommand.execute(ExecuteCommand.java:31) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.execution.tasks.ExecuteCommand.execute(ExecuteCommand.java:19) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.execution.UnboundEntryAction.lambda$bind$0(UnboundEntryAction.java:8) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.execution.CommandQueueEntry.execute(CommandQueueEntry.java:5) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.execution.ExecutionContext.runCommandQueue(ExecutionContext.java:103) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.Commands.executeCommandInContext(Commands.java:442) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.Commands.performCommand(Commands.java:349) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.Commands.performCommand(Commands.java:336) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.Commands.performCommand(Commands.java:331) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.performUnsignedChatCommand(ServerGamePacketListenerImpl.java:2202) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.lambda$handleChatCommand$14(ServerGamePacketListenerImpl.java:2176) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:151) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1511) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:195) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:125) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1488) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1411) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:135) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1377) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1238) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:323) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
+	Suppressed: com.oracle.truffle.api.TruffleStackTrace$LazyStackTrace
+[03:22:19] [Server thread/INFO]: Symmettry issued server command: /[Ljava.lang.String;@65fa13be
+[03:22:19] [Server thread/ERROR]: Command exception: /[Ljava.lang.String;@65fa13be
+java.lang.IllegalStateException: The Context is already closed.
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.PolyglotEngineException.closedException(PolyglotEngineException.java:137) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.PolyglotContextImpl.checkClosedOrDisposing(PolyglotContextImpl.java:1453) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.PolyglotContextImpl.enterThreadChanged(PolyglotContextImpl.java:860) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.PolyglotEngineImpl.enterCached(PolyglotEngineImpl.java:2095) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.HostToGuestRootNode.execute(HostToGuestRootNode.java:109) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.api.impl.DefaultCallTarget.callDirectOrIndirect(DefaultCallTarget.java:85) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.api.impl.DefaultCallTarget.call(DefaultCallTarget.java:102) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.PolyglotFunctionProxyHandler.invoke(PolyglotFunctionProxyHandler.java:151) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/jdk.proxy4/jdk.proxy4.$Proxy86.accept(Unknown Source) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/me.symmettry.papyrus.commands.ScriptedCommand.execute(ScriptedCommand.java:31) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at io.papermc.paper.command.brigadier.bukkit.BukkitCommandNode$BukkitBrigCommand.run(BukkitCommandNode.java:86) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at com.mojang.brigadier.context.ContextChain.runExecutable(ContextChain.java:73) ~[brigadier-1.2.9.jar:?]
+	at net.minecraft.commands.execution.tasks.ExecuteCommand.execute(ExecuteCommand.java:31) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.execution.tasks.ExecuteCommand.execute(ExecuteCommand.java:19) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.execution.UnboundEntryAction.lambda$bind$0(UnboundEntryAction.java:8) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.execution.CommandQueueEntry.execute(CommandQueueEntry.java:5) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.execution.ExecutionContext.runCommandQueue(ExecutionContext.java:103) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.Commands.executeCommandInContext(Commands.java:442) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.Commands.performCommand(Commands.java:349) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.Commands.performCommand(Commands.java:336) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.Commands.performCommand(Commands.java:331) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.performUnsignedChatCommand(ServerGamePacketListenerImpl.java:2202) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.lambda$handleChatCommand$14(ServerGamePacketListenerImpl.java:2176) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:151) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1511) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:195) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:125) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1488) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1411) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:135) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1377) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1238) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:323) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
+	Suppressed: com.oracle.truffle.api.TruffleStackTrace$LazyStackTrace
+[03:22:21] [Server thread/INFO]: Symmettry issued server command: /[Ljava.lang.String;@65fa13be
+[03:22:21] [Server thread/ERROR]: Command exception: /[Ljava.lang.String;@65fa13be
+java.lang.IllegalStateException: The Context is already closed.
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.PolyglotEngineException.closedException(PolyglotEngineException.java:137) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.PolyglotContextImpl.checkClosedOrDisposing(PolyglotContextImpl.java:1453) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.PolyglotContextImpl.enterThreadChanged(PolyglotContextImpl.java:860) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.PolyglotEngineImpl.enterCached(PolyglotEngineImpl.java:2095) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.HostToGuestRootNode.execute(HostToGuestRootNode.java:109) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.api.impl.DefaultCallTarget.callDirectOrIndirect(DefaultCallTarget.java:85) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.api.impl.DefaultCallTarget.call(DefaultCallTarget.java:102) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/com.oracle.truffle.polyglot.PolyglotFunctionProxyHandler.invoke(PolyglotFunctionProxyHandler.java:151) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/jdk.proxy4/jdk.proxy4.$Proxy86.accept(Unknown Source) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at Papyrus-1.0-SNAPSHOT-all-1716426808289.jar/me.symmettry.papyrus.commands.ScriptedCommand.execute(ScriptedCommand.java:31) ~[Papyrus-1.0-SNAPSHOT-all-1716426808289.jar:?]
+	at io.papermc.paper.command.brigadier.bukkit.BukkitCommandNode$BukkitBrigCommand.run(BukkitCommandNode.java:86) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at com.mojang.brigadier.context.ContextChain.runExecutable(ContextChain.java:73) ~[brigadier-1.2.9.jar:?]
+	at net.minecraft.commands.execution.tasks.ExecuteCommand.execute(ExecuteCommand.java:31) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.execution.tasks.ExecuteCommand.execute(ExecuteCommand.java:19) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.execution.UnboundEntryAction.lambda$bind$0(UnboundEntryAction.java:8) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.execution.CommandQueueEntry.execute(CommandQueueEntry.java:5) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.execution.ExecutionContext.runCommandQueue(ExecutionContext.java:103) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.Commands.executeCommandInContext(Commands.java:442) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.Commands.performCommand(Commands.java:349) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.Commands.performCommand(Commands.java:336) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.commands.Commands.performCommand(Commands.java:331) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.performUnsignedChatCommand(ServerGamePacketListenerImpl.java:2202) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.lambda$handleChatCommand$14(ServerGamePacketListenerImpl.java:2176) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:151) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1511) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:195) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:125) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1488) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1411) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:135) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1377) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1238) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:323) ~[paper-1.20.6.jar:1.20.6-90-b149584]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
+	Suppressed: com.oracle.truffle.api.TruffleStackTrace$LazyStackTrace
+[03:22:30] [Server thread/INFO]: Symmettry issued server command: /papyrus:test
+[03:22:31] [Server thread/INFO]: Symmettry issued server command: /papyrus:test
+[03:22:31] [Server thread/INFO]: Symmettry issued server command: /papyrus:test
+[03:22:32] [Server thread/INFO]: Symmettry issued server command: /papyrus:test
+[03:22:33] [Server thread/INFO]: Symmettry issued server command: /papyrus:test
+[03:22:35] [Server thread/INFO]: Symmettry issued server command: /papyrus:test
+[03:22:36] [Server thread/INFO]: Symmettry issued server command: /papyrus:test
+[03:36:46] [Server thread/INFO]: Symmettry lost connection: Disconnected
+[03:36:46] [Server thread/INFO]: Symmettry left the game
