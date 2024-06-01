@@ -3,7 +3,7 @@ package me.symmettry.papyrus.script.members;
 import org.graalvm.polyglot.HostAccess.Export;
 
 @SuppressWarnings("unused")
-public class ScriptReflect {
+public final class ScriptReflect {
 
     /**
      * Helper function which returns the java class based on a string.

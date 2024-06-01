@@ -18,7 +18,7 @@ import java.util.*;
 import java.util.function.Consumer;
 
 @UtilityClass
-public class EventRegistry {
+public final class EventRegistry {
 
     private final Map<BukkitListenerPair<? extends Event>, Listener> bukkitEventMap = new HashMap<>();
     private final Map<PapyrusEvent.PapyrusEventType, List<PapyrusListenerPair>> papyrusEventMap = new HashMap<>();
@@ -47,7 +47,7 @@ public class EventRegistry {
         bukkitEventMap.put(pair, listener);
     }
     public static void registerEvent(final PapyrusListenerPair listenerPair) {
-        if (!papyrusEventMap.containsKey(listenerPair.event())) {
+        if(!papyrusEventMap.containsKey(listenerPair.event())) {
             papyrusEventMap.put(listenerPair.event(), new ArrayList<>());
         }
         papyrusEventMap.get(listenerPair.event()).add(listenerPair);

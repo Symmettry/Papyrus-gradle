@@ -2,6 +2,7 @@ package me.symmettry.papyrus;
 
 import lombok.SneakyThrows;
 import me.symmettry.papyrus.commands.PapyrusCommand;
+import me.symmettry.papyrus.listeners.InventoryListener;
 import me.symmettry.papyrus.script.ScriptManager;
 import me.symmettry.papyrus.util.commands.CommandRegistry;
 import me.symmettry.papyrus.util.data.Database;
@@ -23,10 +24,8 @@ public final class Papyrus extends JavaPlugin {
         }
     }
 
-    @SneakyThrows
-    @Override
+    @Override @SneakyThrows
     public void onEnable() {
-
         System.getProperties().setProperty("polyglot.engine.WarnInterpreterOnly", "false");
 
         inst = this;
@@ -45,12 +44,14 @@ public final class Papyrus extends JavaPlugin {
 
         CommandRegistry.register(new PapyrusCommand());
 
-        this.getServer().getScheduler().scheduleSyncRepeatingTask(this, Database::saveDatabase, 1200, 1200);
+        this.getServer().getPluginManager().registerEvents(new InventoryListener(), this);
+
+        this.getServer().getScheduler().scheduleSyncRepeatingTask(this, Database::saveDatabase, 1200L, 1200L);
     }
 
-    @SneakyThrows
-    @Override
+    @Override @SneakyThrows
     public void onDisable() {
         Database.saveDatabase();
     }
+
 }

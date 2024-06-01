@@ -1,9 +1,9 @@
 package me.symmettry.papyrus.util.commands;
 
-import org.bukkit.command.CommandSender;
+import me.symmettry.papyrus.script.data.PapyrusCommandSender;
 import org.graalvm.polyglot.proxy.ProxyArray;
 
 @FunctionalInterface
 public interface CommandConsumer {
-    void accept(final CommandSender sender, final String string, final ProxyArray args);
+    void accept(final PapyrusCommandSender sender, final String string, final ProxyArray args);
 }

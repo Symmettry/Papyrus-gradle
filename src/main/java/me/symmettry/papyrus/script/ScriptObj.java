@@ -22,7 +22,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ScriptObj {
+public final class ScriptObj {
 
     public String data, path;
     private Context context;
@@ -44,9 +44,10 @@ public class ScriptObj {
         bindings.putMember("Item", new ScriptItem());
         bindings.putMember("Server", new ScriptServer(this));
         bindings.putMember("World", new ScriptWorld());
-
         bindings.putMember("Data", new ScriptData());
         bindings.putMember("Events", new ScriptEvent(this));
+        bindings.putMember("Gui", new ScriptGui());
+        bindings.putMember("Text", new ScriptText());
 
         bindings.putMember("Entity", Entity.class);
         bindings.putMember("Material", Material.class);
@@ -66,19 +67,19 @@ public class ScriptObj {
 
     @SuppressWarnings("FieldCanBeLocal")
     private final String autoSaveValue = """
-    class AutoSaveValue {
-        constructor(defaultValue, id) {
-            this._value = Data.get(id, defaultValue);
-            this._id = id;
+        class AutoSaveValue {
+            constructor(id, defaultValue) {
+                this._value = Data.get(id, defaultValue);
+                this._id = id;
+            }
+            set value(value) {
+                this._value = value;
+                Data.save(this._id, this._value);
+            }
+            get value() {
+                return this._value;
+            }
         }
-        set value(value) {
-            this._value = value;
-            Data.save(this._id, this._value);
-        }
-        get value() {
-            return this._value;
-        }
-    }
     """;
 
     @SneakyThrows
@@ -92,7 +93,7 @@ public class ScriptObj {
             this.context = this.generateContext();
 
             context.eval("js", autoSaveValue + this.data);
-        } catch(PolyglotException e) {
+        } catch(final PolyglotException e) {
             e.printStackTrace();
         }
     }

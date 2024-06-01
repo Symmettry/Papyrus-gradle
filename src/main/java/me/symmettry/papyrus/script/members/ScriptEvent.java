@@ -17,7 +17,7 @@ import org.graalvm.polyglot.HostAccess.Export;
 import java.util.function.Consumer;
 
 @SuppressWarnings("unused")
-public class ScriptEvent {
+public final class ScriptEvent {
 
     private final ScriptObj script;
 
@@ -65,14 +65,17 @@ public class ScriptEvent {
     @Export
     public final Class<? extends Event> InteractEvent = PlayerInteractEvent.class,
             MoveEvent = PlayerMoveEvent.class,
-            DeathEvent = EntityDeathEvent.class,
+            PlayerDeathEvent = PlayerDeathEvent.class,
+            EntityDeathEvent = EntityDeathEvent.class,
             DamageEvent = EntityDamageByEntityEvent.class,
             InventoryClickEvent = InventoryClickEvent.class,
             SneakEvent = PlayerToggleSneakEvent.class,
             BreakEvent = BlockBreakEvent.class,
             PlaceEvent = BlockPlaceEvent.class,
             DropEvent = PlayerDropItemEvent.class,
-            CommandEvent = PlayerCommandPreprocessEvent.class;
+            CommandEvent = PlayerCommandPreprocessEvent.class,
+            JoinEvent = PlayerJoinEvent.class,
+            QuitEvent = PlayerQuitEvent.class;
 
     /**
      * Registers a function to run when a specific Bukkit and/or Paper event occurs.

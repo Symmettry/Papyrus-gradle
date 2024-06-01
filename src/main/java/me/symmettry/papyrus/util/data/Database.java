@@ -11,15 +11,11 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.time.LocalDate;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
-import java.time.temporal.TemporalAccessor;
-import java.util.Date;
 
 @UtilityClass
-public class Database {
+public final class Database {
 
     private final File file = new File(Papyrus.inst.pluginPath + "data.json");
     private JSONObject data;

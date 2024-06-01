@@ -12,7 +12,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class ScriptManager {
+import org.graalvm.polyglot.Context;
+
+public final class ScriptManager {
 
     public static HashMap<String, ScriptObj> loadedScripts = new HashMap<>();
     public static final String scriptsPath = Papyrus.inst.pluginPath + "scripts\\";
@@ -20,7 +22,13 @@ public class ScriptManager {
     public static void loadScripts() {
         final List<String> scripts = new ArrayList<>();
         listFiles(scripts, false);
-        scripts.forEach(ScriptManager::loadScript);
+        if(scripts.isEmpty()) {
+            try(final Context context = Context.newBuilder("js").build()) {
+                context.eval("js", ""); // load graalvm so that when u reload it doesn't take 10 seconds first time.
+            }
+        } else {
+            scripts.forEach(ScriptManager::loadScript);
+        }
     }
 
     public static void loadScript(final String path) {
@@ -46,7 +54,7 @@ public class ScriptManager {
         Files.walkFileTree(Path.of(scriptsPath), new SimpleFileVisitor<>() {
             @Override
             public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
-                if (!isValid(file, disabled)) return FileVisitResult.CONTINUE;
+                if(!isValid(file, disabled)) return FileVisitResult.CONTINUE;
                 final String fileName = file.toString().substring(scriptsPath.length());
                 if(fileName.startsWith("all.")) {
                     throw new RuntimeException("Scripts cannot be named \"all\"");

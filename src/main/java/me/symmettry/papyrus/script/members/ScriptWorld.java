@@ -6,7 +6,7 @@ import org.bukkit.World;
 import org.graalvm.polyglot.HostAccess.Export;
 
 @SuppressWarnings("unused")
-public class ScriptWorld {
+public final class ScriptWorld {
 
     @Export
     public Location location(final double x, final double y, final double z) {

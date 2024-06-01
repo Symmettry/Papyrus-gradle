@@ -4,21 +4,26 @@ import com.ibm.icu.impl.locale.XCldrStub;
 import me.symmettry.papyrus.Papyrus;
 import me.symmettry.papyrus.commands.ScriptedCommand;
 import me.symmettry.papyrus.script.ScriptObj;
-import me.symmettry.papyrus.util.text.ColorUtil;
-import me.symmettry.papyrus.util.text.NameUtil;
 import me.symmettry.papyrus.util.commands.CommandConsumer;
 import me.symmettry.papyrus.util.commands.CommandRegistry;
+import me.symmettry.papyrus.util.text.ComponentFormatter;
+import me.symmettry.papyrus.util.text.TextUtil;
+import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
 import org.bukkit.Location;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import org.graalvm.polyglot.HostAccess.Export;
 
 import java.util.Map;
 
 @SuppressWarnings("unused")
-public class ScriptServer {
+public final class ScriptServer {
 
     private final ScriptObj script;
 
@@ -36,7 +41,18 @@ public class ScriptServer {
      */
     @Export
     public void broadcast(final Object... values) {
-        Papyrus.inst.getServer().broadcast(ColorUtil.colorText(XCldrStub.join(values, " ")));
+        System.out.println(Component.text(XCldrStub.join(values, " ")));
+        Papyrus.inst.getServer().broadcast(Component.text(XCldrStub.join(values, " ")));
+    }
+
+    @Export
+    public void broadcastFormatted(final Object... values) {
+        Papyrus.inst.getServer().broadcast(ComponentFormatter.formatString(XCldrStub.join(values, " ")));
+    }
+
+    @Export
+    public void broadcast(final Component value) {
+        Papyrus.inst.getServer().broadcast(value);
     }
 
     /**
@@ -76,8 +92,26 @@ public class ScriptServer {
      */
     @Export
     public Entity spawnEntity(final String type, final Location location) {
-        return location.getWorld().spawnEntity(location, EntityType.valueOf(NameUtil.mojangName(type)));
+        return location.getWorld().spawnEntity(location, EntityType.valueOf(TextUtil.mojangName(type)));
     }
 
+    @Export
+    public Entity dropItem(final ItemStack item, final Location location) {
+        return location.getWorld().dropItem(location, item);
+    }
+
+    @Export
+    public Player getPlayer(final String name) {
+        return Bukkit.getPlayer(name);
+    }
+    @Export
+    public OfflinePlayer getOfflinePlayer(final String name) {
+        return Bukkit.getOfflinePlayer(name);
+    }
+
+    @Export
+    public GameMode gameMode(final String string) {
+        return GameMode.valueOf(TextUtil.mojangName(string));
+    }
 
 }

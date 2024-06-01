@@ -6,13 +6,13 @@ import org.bukkit.event.Event;
 
 import java.util.*;
 
-public class ScriptListenerManager {
+public final class ScriptListenerManager {
 
     private static final Map<ScriptObj, List<BukkitListenerPair<? extends Event>>> bukkitListenerMap = new HashMap<>();
     private static final Map<ScriptObj, List<PapyrusListenerPair>> papyrusListenerMap = new HashMap<>();
 
     public static <T extends Event> void addBukkitListener(final ScriptObj script, final BukkitListenerPair<T> listenerPair) {
-        if (!bukkitListenerMap.containsKey(script)) {
+        if(!bukkitListenerMap.containsKey(script)) {
             bukkitListenerMap.put(script, new ArrayList<>());
         }
         bukkitListenerMap.get(script).add(listenerPair);
@@ -20,7 +20,7 @@ public class ScriptListenerManager {
     }
 
     public static void addPapyrusListener(final PapyrusListenerPair listenerPair) {
-        if (!papyrusListenerMap.containsKey(listenerPair.script())) {
+        if(!papyrusListenerMap.containsKey(listenerPair.script())) {
             papyrusListenerMap.put(listenerPair.script(), new ArrayList<>());
         }
         papyrusListenerMap.get(listenerPair.script()).add(listenerPair);

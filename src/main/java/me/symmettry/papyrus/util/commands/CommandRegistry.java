@@ -2,14 +2,14 @@ package me.symmettry.papyrus.util.commands;
 
 import lombok.experimental.UtilityClass;
 import me.symmettry.papyrus.Papyrus;
+import org.apache.commons.lang3.StringUtils;
 import org.bukkit.Server;
 import org.bukkit.command.CommandMap;
 
 import java.lang.reflect.Field;
-import java.util.Objects;
 
 @UtilityClass
-public class CommandRegistry {
+public final class CommandRegistry {
 
     private final Server server = Papyrus.inst.getServer();
     private final CommandMap cmdMap;
@@ -25,11 +25,13 @@ public class CommandRegistry {
     }
 
     public void register(final AbstractCommand command) {
+        command.getAliases().removeIf(StringUtils::isBlank);
         cmdMap.register(Papyrus.inst.getName(), command);
     }
 
     public void unregister(final AbstractCommand command) {
-        Objects.requireNonNull(cmdMap.getCommand(command.getName())).unregister(cmdMap);
+        command.unregister(cmdMap);
+        cmdMap.getKnownCommands().remove(command.getName());
     }
 
 }

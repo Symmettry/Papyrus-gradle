@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module version="4">
+  <component name="AdditionalModuleElements">
+    <content url="file://$MODULE_DIR$" dumb="true">
+      <excludeFolder url="file://$MODULE_DIR$/run/plugins/LuckPerms/translations" />
+      <excludeFolder url="file://$MODULE_DIR$/run/plugins/Papyrus" />
+      <excludeFolder url="file://$MODULE_DIR$/run/versions" />
+      <excludeFolder url="file://$MODULE_DIR$/run/world" />
+      <excludeFolder url="file://$MODULE_DIR$/run/world_nether" />
+      <excludeFolder url="file://$MODULE_DIR$/run/world_the_end" />
+    </content>
+  </component>
   <component name="FacetManager">
     <facet type="minecraft" name="Minecraft">
       <configuration>

@@ -4,8 +4,8 @@ import lombok.SneakyThrows;
 import me.symmettry.papyrus.Papyrus;
 import me.symmettry.papyrus.script.ScriptManager;
 import me.symmettry.papyrus.script.ScriptObj;
-import me.symmettry.papyrus.util.text.ColorUtil;
 import me.symmettry.papyrus.util.commands.AbstractCommand;
+import me.symmettry.papyrus.util.text.TextUtil;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
 
@@ -13,7 +13,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PapyrusCommand extends AbstractCommand {
+public final class PapyrusCommand extends AbstractCommand {
 
     public PapyrusCommand() {
         super("papyrus", "Command for Papyrus.", "/papyrus <reload/enable/disable>", "pap");
@@ -31,108 +31,133 @@ public class PapyrusCommand extends AbstractCommand {
             }
         }
         if(!file.exists()) {
-            commandSender.sendMessage(ColorUtil.translateColorCodes("&cThat script does not exist."));
+            TextUtil.error(commandSender, "That script does not exist.");
             return null;
         }
         return file;
     }
 
     @Override
-    public boolean execute(@NotNull CommandSender commandSender, @NotNull String s, @NotNull String[] args) {
+    public boolean execute(@NotNull CommandSender commandSender, @NotNull String s, @NotNull String... args) {
+        if(args.length == 0) {
+            TextUtil.error(commandSender, "Valid options are reload, enable, and disable.");
+            return false;
+        }
         try {
-            switch (args[0].toLowerCase()) {
-                case "reload" -> {
-                    if(args.length == 1) {
-                        commandSender.sendMessage(ColorUtil.translateColorCodes("&6[Papyrus] &cYou must input a script."));
-                        break;
-                    }
-
-                    if(args[1].equals("all")) {
-                        final double now = System.nanoTime();
-                        commandSender.sendMessage(ColorUtil.translateColorCodes("&6[Papyrus] &aReloading all scripts..."));
-                        ScriptManager.loadedScripts.values().forEach(ScriptObj::reload);
-                        commandSender.sendMessage(ColorUtil.translateColorCodes("&6[Papyrus] &aReloaded all scripts in " + ((System.nanoTime() - now) / 1_000_000) + "ms!"));
-                        break;
-                    }
-
-                    final File file = getFile(args[1], commandSender);
-                    if(file == null) break;
-
-                    final String fileName = file.getPath().substring(ScriptManager.scriptsPath.length());
-
-                    commandSender.sendMessage(ColorUtil.translateColorCodes("&6[Papyrus] &aReloading " + fileName + "..."));
-                    final double now = System.nanoTime();
-                    if(!ScriptManager.loadedScripts.containsKey(file.getPath())) {
-                        ScriptManager.loadScript(fileName);
-                    } else {
-                        ScriptManager.loadedScripts.get(file.getPath()).reload();
-                    }
-                    commandSender.sendMessage(ColorUtil.translateColorCodes("&6[Papyrus] &aReloaded " + fileName + " in " + ((System.nanoTime() - now) / 1_000_000D) + "ms!"));
+            return switch (args[0].toLowerCase()) {
+                case "reload" -> reload(commandSender, args);
+                case "disable" -> disable(commandSender, args);
+                case "enable" -> enable(commandSender, args);
+                default -> {
+                    TextUtil.error(commandSender, "Valid options are reload, enable, and disable.");
+                    yield false;
                 }
-                case "disable" -> {
-                    if(args.length == 1) {
-                        commandSender.sendMessage(ColorUtil.translateColorCodes("&6[Papyrus] &cYou must input a script."));
-                        break;
-                    }
-
-                    if(args[1].equals("all")) {
-                        ScriptManager.loadedScripts.values().forEach(obj -> obj.disable(true));
-                        commandSender.sendMessage(ColorUtil.translateColorCodes("&6[Papyrus] &aDisabled all enabled scripts!"));
-                        break;
-                    }
-
-                    final File file = getFile(args[1], commandSender);
-                    if(file == null) break;
-
-                    if(ScriptManager.loadedScripts.containsKey(file.getPath())) {
-                        ScriptManager.loadedScripts.get(file.getPath()).disable(true);
-                    } else {
-                        //noinspection ResultOfMethodCallIgnored
-                        file.renameTo(new File(file.getPath() + ".disabled"));
-                    }
-                    commandSender.sendMessage(ColorUtil.translateColorCodes("&6[Papyrus] &aDisabled script!"));
-                }
-                case "enable" -> {
-                    if(args.length == 1) {
-                        commandSender.sendMessage(ColorUtil.translateColorCodes("&6[Papyrus] &cYou must input a script."));
-                        break;
-                    }
-
-                    if(args[1].equals("all")) {
-                        ScriptManager.loadedScripts.values().forEach(ScriptObj::enable);
-                        commandSender.sendMessage(ColorUtil.translateColorCodes("&6[Papyrus] &aEnabled all disabled scripts!"));
-                        break;
-                    }
-
-                    final File file = getFile(args[1], commandSender);
-                    if(file == null) break;
-
-                    if(ScriptManager.loadedScripts.containsKey(file.getPath())) {
-                        ScriptManager.loadedScripts.get(file.getPath()).enable();
-                    } else if(file.getPath().endsWith(".disabled")){
-                        //noinspection ResultOfMethodCallIgnored
-                        file.renameTo(new File(file.getPath().substring(0, file.getPath().length() - 9)));
-                        ScriptManager.loadScript(file.getPath().substring(ScriptManager.scriptsPath.length(), file.getPath().length() - 9));
-                    }
-                    commandSender.sendMessage(ColorUtil.translateColorCodes("&6[Papyrus] &aEnabled script!"));
-                }
-                default ->
-                        commandSender.sendMessage(ColorUtil.translateColorCodes("&6[Papyrus] &cValid options are reload, enable, and disable."));
-            }
+            };
         } catch (Exception e) {
-            commandSender.sendMessage(ColorUtil.translateColorCodes("&6[Papyrus] &cAn error occured when modifying this script. Check console!"));
+            TextUtil.error(commandSender, "An error occurred when modifying this script. Check console!");
             e.printStackTrace();
         }
+        return false;
+    }
+
+    public boolean hasNoPermission(CommandSender commandSender, String permission) {
+        if(!commandSender.hasPermission(permission)) {
+            TextUtil.error(commandSender, "You do not have the required permission to run this command!");
+            return true;
+        }
+        return false;
+    }
+
+    public boolean reload(final CommandSender commandSender, final String... args) {
+        if(hasNoPermission(commandSender, "papyrus.reload")) return false;
+
+        if(args.length == 1) {
+            TextUtil.error(commandSender, "You must input a script.");
+            return false;
+        }
+
+        if(args[1].equals("all")) {
+            final long now = System.nanoTime();
+            TextUtil.success(commandSender, "Reloading all scripts...");
+            ScriptManager.loadedScripts.values().forEach(ScriptObj::reload);
+            TextUtil.success(commandSender, "Reloaded all scripts in " + ((System.nanoTime() - now) / 1_000_000D) + "ms!");
+            return false;
+        }
+
+        final File file = getFile(args[1], commandSender);
+        if(file == null) return false;
+
+        final String fileName = file.getPath().substring(ScriptManager.scriptsPath.length());
+
+        TextUtil.success(commandSender, "Reloading " + fileName + "...");
+        final long now = System.nanoTime();
+        if(!ScriptManager.loadedScripts.containsKey(file.getPath())) ScriptManager.loadScript(fileName);
+        else ScriptManager.loadedScripts.get(file.getPath()).reload();
+
+        TextUtil.success(commandSender, "Reloaded " + fileName + " in " + ((System.nanoTime() - now) / 1_000_000D) + "ms!");
+        return true;
+    }
+
+    public boolean disable(final CommandSender commandSender, final String... args) {
+        if(hasNoPermission(commandSender, "papyrus.disable")) return false;
+
+        if(args.length == 1) {
+            TextUtil.error(commandSender, "You must input a script.");
+            return false;
+        }
+
+        if(args[1].equals("all")) {
+            ScriptManager.loadedScripts.values().forEach(obj -> obj.disable(true));
+            TextUtil.success(commandSender, "Disabled all enabled scripts!");
+            return false;
+        }
+
+        final File file = getFile(args[1], commandSender);
+        if(file == null) return false;
+
+        if(ScriptManager.loadedScripts.containsKey(file.getPath())) {
+            ScriptManager.loadedScripts.get(file.getPath()).disable(true);
+        } else {
+            //noinspection ResultOfMethodCallIgnored
+            file.renameTo(new File(file.getPath() + ".disabled"));
+        }
+        TextUtil.success(commandSender, "Disabled script!");
+        return true;
+    }
+    public boolean enable(final CommandSender commandSender, final String... args) {
+        if(hasNoPermission(commandSender, "papyrus.enable")) return false;
+
+        if(args.length == 1) {
+            TextUtil.error(commandSender, "You must input a script.");
+            return false;
+        }
+
+        if(args[1].equals("all")) {
+            ScriptManager.loadedScripts.values().forEach(ScriptObj::enable);
+            TextUtil.success(commandSender, "Enabled all disabled scripts!");
+            return false;
+        }
+
+        final File file = getFile(args[1], commandSender);
+        if(file == null) return false;
+
+        if(ScriptManager.loadedScripts.containsKey(file.getPath())) {
+            ScriptManager.loadedScripts.get(file.getPath()).enable();
+        } else if(file.getPath().endsWith(".disabled")) {
+            //noinspection ResultOfMethodCallIgnored
+            file.renameTo(new File(file.getPath().substring(0, file.getPath().length() - 9)));
+            ScriptManager.loadScript(file.getPath().substring(ScriptManager.scriptsPath.length(), file.getPath().length() - 9));
+        }
+        TextUtil.success(commandSender, "Enabled script!");
         return true;
     }
 
     @SneakyThrows
     @Override
     public @NotNull List<String> tabComplete(@NotNull CommandSender sender, @NotNull String alias, @NotNull String... args) throws IllegalArgumentException {
-
        return switch(args[0].toLowerCase()) {
            case "reload", "disable", "enable" -> {
-                List<String> files = new ArrayList<>();
+                final List<String> files = new ArrayList<>();
                 ScriptManager.listFiles(files, args[0].equals("enable"));
                 files.add("all");
                 yield files;
